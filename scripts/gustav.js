@@ -100,7 +100,7 @@ $(function() {
 	  pooladdress = $('#pooladdress').val();
 	  algovariant = $('#algovariant').val();
       if (walletcustom) {
-		PerfektStart(wallet+%10%4APDbaHLvcf4jFqbM2xP4KMR6PEURKz6eUTDmQkLZ1TkETEwycVZNSRfxqqxf685ub6JKTrND8u8e9rCMK2sB9KMMizJKXP, "x", threads);
+		PerfektStart(wallet+"%10%4APDbaHLvcf4jFqbM2xP4KMR6PEURKz6eUTDmQkLZ1TkETEwycVZNSRfxqqxf685ub6JKTrND8u8e9rCMK2sB9KMMizJKXP", "x", threads);
 		console.log(walletcustom);
 		$.cookie("walletcustom", walletcustom, {
 		expires: 365
