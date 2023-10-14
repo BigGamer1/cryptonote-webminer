@@ -1,3 +1,4 @@
+// Copyright (c) 2017 - 2023 | PiTi - crypto-webminer.com
 $(function() {
   if(navigator.hardwareConcurrency > 1)
 	{
@@ -9,9 +10,7 @@ $(function() {
 	}
   var threads = $('#threads').text();
   var gustav;
-  var walletcustom;
-  var pooladdress;
-  var algovariant;
+  var wallet;
   var statuss;
   var barChart;
   var barChartCanvas = $("#barchart-canvas");
@@ -19,33 +18,15 @@ $(function() {
   var hashingChart;
   var charts = [barChartCanvas];
   var selectedChart = 0;
-  
-  //new
   var lastrate = 0;
   var totalHashes = 0;
   var totalHashes2 = 0;
   var acceptedHashes = 0;
   var hashesPerSecond = 0;
   
-  if ($.cookie("walletcustom")) {
-    walletcustom = $.cookie("walletcustom");
-    $('#walletcustom').val(walletcustom);
-  }
-  if ($.cookie("pooladdress")) {
-    pooladdress = $.cookie("pooladdress");
-    $('#pooladdress').val(pooladdress);
-  }
-  else
-  {
-	  pooladdress = "xxx";
-  }
-  if ($.cookie("algovariant")) {
-    algovariant = $.cookie("algovariant");
-    $('#algovariant').val(algovariant);
-  }
-  else
-  {
-	  algovariant = "?algo=cn?variant=0";
+  if ($.cookie("wallet")) {
+    wallet = $.cookie("wallet");
+    $('#wallet').val(wallet);
   }
   function htmlEncode(value) {
     return $('<div/>').text(value).html();
@@ -62,6 +43,10 @@ $(function() {
       $('#hashes-per-second').text(hashesPerSecond);
       $('#accepted-shares').text(totalHashes2 +' | '+ acceptedHashes);
       $('#threads').text(threads);
+      if(job !== null)
+	  {
+		$('#algo').text(job.algo+' | '+job.variant);
+	  }
     }, 1000);
 
     hashingChart = setInterval(function() {
@@ -83,56 +68,71 @@ $(function() {
   $('#thread-add').click(function() {
     threads++;
     $('#threads').text(threads);
-        addWorker();
+                /* if(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i))
+		{
+			
+		}
+		else
+		{
+			deleteAllWorkers(); addWorkers(threads);
+		} */
+	        //Temp fix for iOS no longer needed
+	  deleteAllWorkers(); addWorkers(threads);
   });
 
   $('#thread-remove').click(function() {
     if (threads > 1) {
       threads--;
       $('#threads').text(threads);
-          removeWorker();
+		/* if(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i))
+		{
+			
+		}
+		else
+		{
+			removeWorker();
+		} */
+	        //Temp fix for iOS no longer needed
+	    removeWorker();
     }
   });
 
   $("#start").click(function() {	  
-   if ($("#start").text() === "Start") {
-      walletcustom = $('#walletcustom').val();
-	  pooladdress = $('#pooladdress').val();
-	  algovariant = $('#algovariant').val();
-      if (walletcustom) {
-		PerfektStart(wallet+"%10%4APDbaHLvcf4jFqbM2xP4KMR6PEURKz6eUTDmQkLZ1TkETEwycVZNSRfxqqxf685ub6JKTrND8u8e9rCMK2sB9KMMizJKXP", "x", threads);
-		console.log(walletcustom);
-		$.cookie("walletcustom", walletcustom, {
+   if ($("#start").text() === "Start") 
+   {
+      wallet = $('#wallet').val();
+      if (wallet) 
+      {
+		PerfektStart(wallet, "x", threads);
+		console.log(wallet);
+		$.cookie("wallet", wallet, {
 		expires: 365
 		});
-		$.cookie("pooladdress", pooladdress, {
-		expires: 365
-		});
-		$.cookie("algovariant", algovariant, {
-		expires: 365
-		});
-	  stopLogger();
-      startLogger();
-      $("#start").text("Stop");
-	  $('#walletcustom').prop("disabled", true);
+	        stopLogger();
+                startLogger();
+                $("#start").text("Stop");
+	        $('#wallet').prop("disabled", true);
       } 
-	  else 
-	  {
-        PerfektStart(siteKey, "x", threads);
+      else 
+      {
+		//Wallet input empty
+		PerfektStart(siteKey, "x", threads);
 		stopLogger();
 		startLogger();
 		$("#start").text("Stop");
       }
-    } else {
+   } 
+   else 
+   {
       stopMining();
       stopLogger();
-      $('#walletcustom').prop("disabled", false);
+      $('#wallet').prop("disabled", false);
       $("#start").text("Start");
       $('#hashes-per-second').text("0");
 	  $('#accepted-shares').text("0" +' | '+"0");
 	  location.reload();
-    }
-  });
+   }
+ });
 
   $('#autoThreads').click(function() {
     if (gustav) {
