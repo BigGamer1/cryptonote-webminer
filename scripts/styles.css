@@ -47,6 +47,7 @@ h1 {
 	font-size: 56px;
 	font-weight: normal;
 	margin: 0 0 16px 0;
+	color: black;
 }
 
 h2 {
@@ -54,6 +55,7 @@ h2 {
 	text-transform: uppercase;
 	font-size: 32px;
 	margin: 0;
+	color: black;
 }
 
 h3 {
@@ -61,6 +63,7 @@ h3 {
 	font-weight: normal;
 	text-transform: uppercase;
 	margin: 0 0 4px 0;
+	color: black;
 }
 
 div.row {
@@ -76,7 +79,7 @@ div.box {
 input[type=text] {
     border: none;
     outline: none;
-    color: grey;
+    color: black;
     width: 100%;
     font-size: 24px;
 
@@ -114,7 +117,7 @@ button {
   -moz-box-shadow: 1px 3px 3px #000000;
   box-shadow: 1px 3px 3px #000000;
   font-family: Arial;
-  color: #ffffff;
+  color: black;
   padding: 5px;
   text-decoration: none;
 }
@@ -212,7 +215,7 @@ th { color: #555; text-transform: uppercase; font-weight: normal; font-size:12px
 #wallet
 {
 	font-size: 14px;
-	color: #F5F7F6;
+	color: black;
 	text-align: center;
 }
 
@@ -231,7 +234,7 @@ input[type=button], input[type=submit], input[type=reset] {
   -moz-box-shadow: 1px 3px 3px #000000;
   box-shadow: 1px 3px 3px #000000;
   font-family: Arial;
-  color: #ffffff;
+  color: black;
   font-size: 14px;
   padding: 5px;
   margin-bottom: 5px;
