@@ -9,7 +9,7 @@ img {
 }
 
 body {
-	background: #161618;
+	background-img: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fcrypto-background&psig=AOvVaw2XNmirft9o8YevOw0TkuGy&ust=1697345740229000&source=images&cd=vfe&opi=89978449&ved=0CA4QjRxqFwoTCLjliOLf9IEDFQAAAAAdAAAAABAD");
 	font-family: sans-serif;
 	line-height: 1.3;
 	color: #f2f5f4;
@@ -101,12 +101,7 @@ button {
 	width: 100%;
 	font-size: 18px;
 	cursor: pointer;
-	background: #262fe2;
-  background-image: -webkit-linear-gradient(top, #262fe2, #2e8078);
-  background-image: -moz-linear-gradient(top, #262fe2, #2e8078);
-  background-image: -ms-linear-gradient(top, #262fe2, #2e8078);
-  background-image: -o-linear-gradient(top, #262fe2, #2e8078);
-  background-image: linear-gradient(to bottom, #262fe2, #2e8078);
+	background: #f5f5f5;
   -webkit-border-radius: 14;
   -moz-border-radius: 14;
   border-radius: 14px;
