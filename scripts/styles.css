@@ -72,6 +72,7 @@ div.row {
 div.box {
 	width: 50%;
 	flex-grow: 1;
+	background: black;
 }
 
 input[type=text] {
