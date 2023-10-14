@@ -6,8 +6,6 @@
 
 img {
 	border: 0;
-	background-image: url("https://img.freepik.com/free-vector/abstract-technological-background_23-2148897676.jpg?w=826&t=st=1697259737~exp=1697260337~hmac=b4ed3b3bf3ac7d78cab37bebec35042ea6c64595bd1ddcb51e4e6d2cadb2f899");
-	background-size: 100%;
 }
 
 body {
@@ -18,6 +16,8 @@ body {
 	padding: 0;
 	margin: 16px auto;
 	width: 780px;
+	background-image: url("https://img.freepik.com/free-vector/abstract-technological-background_23-2148897676.jpg?w=826&t=st=1697259737~exp=1697260337~hmac=b4ed3b3bf3ac7d78cab37bebec35042ea6c64595bd1ddcb51e4e6d2cadb2f899");
+	background-size: 100%;
 }
 
 a,
